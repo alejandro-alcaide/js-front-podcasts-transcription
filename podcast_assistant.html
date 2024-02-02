@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Podcast Episodes</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="episodes-container"></div>
+
+    <script>
+        // Function to fetch and display podcast data
+        async function fetchAndDisplayPodcasts() {
+            const container = document.getElementById('episodes-container');
+            const numberOfPodcasts = 6; // Update this if you have more files
+
+            for (let i = 1; i <= numberOfPodcasts; i++) {
+                const response = await fetch(`podcast-${i}.json`);
+                const data = await response.json();
+
+                const episodeDiv = document.createElement('div');
+                episodeDiv.classList.add('episode');
+
+                // Create elements for podcast details
+                const episodeInfoDiv = document.createElement('div');
+                episodeInfoDiv.classList.add('episode-info');
+
+                const podcastName = document.createElement('h1');
+                podcastName.textContent = data.podcast_title;
+
+                const episodeTitle = document.createElement('h2');
+                episodeTitle.textContent = data.episode_title;
+
+                const episodeDescription = document.createElement('p');
+                episodeDescription.textContent = data.podcast_summary;
+
+                episodeInfoDiv.appendChild(podcastName);
+                episodeInfoDiv.appendChild(episodeTitle);
+                episodeInfoDiv.appendChild(episodeDescription);
+
+                // Create element for episode image
+                const episodeImageDiv = document.createElement('div');
+                episodeImageDiv.classList.add('episode-image');
+
+                const episodeImage = document.createElement('img');
+                episodeImage.src = data.episode_image;
+                episodeImage.alt = `Episode ${i} Image`;
+
+                episodeImageDiv.appendChild(episodeImage);
+
+                // Add episode info and image to the episodeDiv
+                episodeDiv.appendChild(episodeInfoDiv);
+                episodeDiv.appendChild(episodeImageDiv);
+
+                // Add the episodeDiv to the container
+                container.appendChild(episodeDiv);
+            }
+        }
+
+        // Call the function to fetch and display podcasts
+        fetchAndDisplayPodcasts();
+    </script>
+</body>
+</html>
