@@ -11,10 +11,11 @@
         // Function to fetch and display podcast data
         async function fetchAndDisplayPodcasts() {
             const container = document.getElementById('episodes-container');
-            const numberOfPodcasts = 6; // Update this if you have more files
+            const numberOfPodcasts = 12; // Update this if you have more files
 
             for (let i = 1; i <= numberOfPodcasts; i++) {
-                const response = await fetch(`podcast-${i}.json`);
+                const formattedNumber = String(i).padStart(3, '0'); // Format the number with leading zeros
+                const response = await fetch(`podcast-${formattedNumber}.json`);
                 const data = await response.json();
 
                 const episodeDiv = document.createElement('div');
@@ -47,7 +48,7 @@
 
                 const episodeImage = document.createElement('img');
                 episodeImage.src = data.episode_image;
-                episodeImage.alt = `Episode ${i} Image`;
+                episodeImage.alt = `Episode ${formattedNumber} Image`;
 
                 episodeImageDiv.appendChild(episodeImage);
 
