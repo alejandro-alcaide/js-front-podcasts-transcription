@@ -34,17 +34,41 @@ h1 {
 
 img {
     min-width: 100px;
-    max-width: 500px;
+    max-width: 100%;
     height: auto;
 }
 
 .episode-description {
     font-family: 'Roboto', Arial, sans-serif; /* Explicitly set the font */
-
     white-space: pre-wrap; /* Allows text to wrap within its container */
     word-wrap: break-word; /* Breaks long words to prevent overflow */
     overflow-wrap: break-word; /* Modern equivalent of word-wrap, ensures wrapping */
     font-family: inherit; /* Ensure it uses the same font as the body */
     max-height: 500px; /* Example maximum height */
     overflow-y: auto; /* Show scrollbar when content exceeds max height */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .episode {
+        flex-direction: column; /* Stack episode info and image vertically on small screens */
+    }
+
+    .episode-info, .episode-image {
+        flex: none;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .episode-description {
+        max-height: 300px; /* Adjust max-height for smaller screens */
+    }
+
+    h1, h2, p {
+        font-size: 16px; /* Increase font size for headings and text */
+    }
+
 }
