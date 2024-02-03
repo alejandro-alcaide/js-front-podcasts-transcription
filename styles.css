@@ -38,4 +38,5 @@ img {
 
 .episode-description {
     white-space: pre-line;
+	overflow-wrap: break-word;
 }
