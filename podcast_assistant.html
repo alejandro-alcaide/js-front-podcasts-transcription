@@ -31,7 +31,7 @@
                 episodeTitle.textContent = data.episode_title;
 
                 const guestName = document.createElement('p');
-                guestName.textContent = `Guest ${data.podcast_guest.name}`; // Display guest's name
+                guestName.textContent = `Guest: ${data.podcast_guest.name}`; // Display guest's name
 
                 const episodeDescription = document.createElement('p');
                 episodeDescription.textContent = data.podcast_summary;
