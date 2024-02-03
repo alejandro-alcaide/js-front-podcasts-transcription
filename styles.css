@@ -17,6 +17,8 @@ h1 {
     margin: 20px;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    align-items: flex-start; /* will align children at the start of the container, preventing them from stretching to fill the container heigh */
+
 }
 
 .episode-info {
@@ -37,7 +39,12 @@ img {
 }
 
 .episode-description {
+    font-family: 'Roboto', Arial, sans-serif; /* Explicitly set the font */
+
     white-space: pre-wrap; /* Allows text to wrap within its container */
     word-wrap: break-word; /* Breaks long words to prevent overflow */
     overflow-wrap: break-word; /* Modern equivalent of word-wrap, ensures wrapping */
+    font-family: inherit; /* Ensure it uses the same font as the body */
+    max-height: 500px; /* Example maximum height */
+    overflow-y: auto; /* Show scrollbar when content exceeds max height */
 }
