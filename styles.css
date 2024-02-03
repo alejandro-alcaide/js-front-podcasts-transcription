@@ -35,3 +35,7 @@ img {
 	max-width: 500px;
     height: auto;
 }
+
+.episode-description {
+    white-space: pre-line;
+}
