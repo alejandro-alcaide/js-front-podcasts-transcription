@@ -34,7 +34,7 @@
                 const guestName = document.createElement('p');
                 guestName.textContent = `Guest: ${data.podcast_guest.name}`; // Display guest's name
 
-                const episodeDescription = document.createElement('p');
+                const episodeDescription = document.createElement('pre');
                 episodeDescription.textContent = data.podcast_summary;
 				episodeDescription.style.overflowWrap = 'break-word';
 
