@@ -30,11 +30,15 @@
                 const episodeTitle = document.createElement('h2');
                 episodeTitle.textContent = data.episode_title;
 
+                const guestName = document.createElement('p');
+                guestName.textContent = data.podcast_guest.name;
+
                 const episodeDescription = document.createElement('p');
                 episodeDescription.textContent = data.podcast_summary;
 
                 episodeInfoDiv.appendChild(podcastName);
                 episodeInfoDiv.appendChild(episodeTitle);
+                episodeInfoDiv.appendChild(guestName); // Include guest name
                 episodeInfoDiv.appendChild(episodeDescription);
 
                 // Create element for episode image
