@@ -32,13 +32,12 @@ h1 {
 
 img {
     min-width: 100px;
-    max-width: 500px;
+	max-width: 500px;
     height: auto;
 }
 
-.episode-info pre {
+.episode-description {
     white-space: pre-wrap; /* Allows text to wrap within its container */
     word-wrap: break-word; /* Breaks long words to prevent overflow */
     overflow-wrap: break-word; /* Modern equivalent of word-wrap, ensures wrapping */
-    overflow-wrap: break-word; /* Ensures text wraps and does not overflow */
 }
