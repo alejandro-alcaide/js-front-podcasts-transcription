@@ -40,9 +40,15 @@
 				episodeDescription.classList.add('episode-description');
                 episodeDescription.textContent = data.podcast_summary;
 
+                // New: Count words in the podcast transcription
+                const wordCount = countWords(data.podcast_transcription);
+                const wordCountDisplay = document.createElement('p');
+                wordCountDisplay.textContent = `Transcription Word Count: ${wordCount}`;
+
                 episodeInfoDiv.appendChild(podcastName);
                 episodeInfoDiv.appendChild(episodeTitle);
                 episodeInfoDiv.appendChild(guestName); // Include guest name
+                episodeInfoDiv.appendChild(wordCountDisplay); // Display word count
                 episodeInfoDiv.appendChild(episodeDescription);
 
                 // Create element for episode image
@@ -62,6 +68,11 @@
                 // Add the episodeDiv to the container
                 container.appendChild(episodeDiv);
             }
+        }
+
+        // Function to count words in a string
+        function countWords(str) {
+            return str.split(/\s+/).filter(Boolean).length;
         }
 
         // Call the function to fetch and display podcasts

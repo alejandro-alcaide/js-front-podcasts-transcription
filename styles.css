@@ -44,7 +44,7 @@ img {
     word-wrap: break-word; /* Breaks long words to prevent overflow */
     overflow-wrap: break-word; /* Modern equivalent of word-wrap, ensures wrapping */
     font-family: inherit; /* Ensure it uses the same font as the body */
-    max-height: 500px; /* Example maximum height */
+    max-height: 675px; /* Example maximum height */
     overflow-y: auto; /* Show scrollbar when content exceeds max height */
 }
 
@@ -64,7 +64,7 @@ img {
     }
 
     .episode-description {
-        max-height: 300px; /* Adjust max-height for smaller screens */
+        max-height: 300; /* Adjust max-height for smaller screens */
     }
 
     h1, h2, p {
