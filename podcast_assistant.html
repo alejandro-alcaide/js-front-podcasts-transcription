@@ -36,6 +36,7 @@
 
                 const episodeDescription = document.createElement('pre');
                 episodeDescription.textContent = data.podcast_summary;
+				episodeDescription.style.overflowWrap = 'break-word';
 
                 episodeInfoDiv.appendChild(podcastName);
                 episodeInfoDiv.appendChild(episodeTitle);
